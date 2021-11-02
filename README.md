@@ -1,4 +1,7 @@
-# SDev3-CA1
+# ! Due 16th November !
 Software Dev CA1 Django Project
 
-! Due 16th November !
+Admin login:
+admin
+adminpw123
+
