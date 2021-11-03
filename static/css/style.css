@@ -1,3 +1,9 @@
+body{
+    background-image: linear-gradient(to right, orange, white);
+}
+
+/* Login Page CSS */
+
 #loginContainer{
     background-color: black;
     left: 50%;
@@ -10,11 +16,44 @@
 }
 
 #loginForm input[type = "text"], #loginForm input[type = "password"]{
+    border: 0;
+    margin: auto;
+    border: .2em solid rgb(248, 217, 130);
+    padding: 1em .5em;
+    text-align: center;
+    border-radius: 2em;
+    background: none;
     color: white;
+    transition: .25s;
+    outline: none;
 }
 
 #loginForm h1{
     padding-bottom: 1em;
     color: white;
     text-transform: uppercase;
+}
+
+#loginForm button[type = "submit"]{
+    border: 0;
+    margin: auto;
+    border: .2em solid #2ecc71;
+    padding: 1em 3em;
+    text-align: center;
+    border-radius: 2em;
+    background: none;
+    color: white;
+    transition: .25s;
+    outline: none;
+    cursor: pointer;
+}
+
+#loginForm button[type = "submit"]:hover{
+    background: #2ecc71;
+    transition: .75s;
+}
+
+#loginForm input[type = "text"]:focus, #loginForm input[type = "password"]:focus{
+    width: 15em;
+    border-color: #2ecc71;
 }
