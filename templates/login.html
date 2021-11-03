@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +10,8 @@
     <title>Login</title>
 </head>
 
-<nav>
-    <li>
-        <a href="">Home</a>
-        <a href="">Sign Up</a>
-    </li>
-</nav>
-
 <body>
+    {% block content %}
     <div id="loginContainer">
         <form id="loginForm">
             <h1>
@@ -26,5 +22,6 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    {% endblock content %}
 </body>
 </html>
