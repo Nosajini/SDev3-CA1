@@ -1,5 +1,10 @@
+* {
+    margin: 0;
+}
+
 body{
     background-image: linear-gradient(to right, orange, white);
+
 }
 
 /* Login Page CSS */
@@ -16,7 +21,6 @@ body{
 }
 
 #loginForm input[type = "text"], #loginForm input[type = "password"]{
-    border: 0;
     margin: auto;
     border: .2em solid rgb(248, 217, 130);
     padding: 1em .5em;
@@ -35,7 +39,6 @@ body{
 }
 
 #loginForm button[type = "submit"]{
-    border: 0;
     margin: auto;
     border: .2em solid #2ecc71;
     padding: 1em 3em;
@@ -44,7 +47,6 @@ body{
     background: none;
     color: white;
     transition: .25s;
-    outline: none;
     cursor: pointer;
 }
 
@@ -56,4 +58,39 @@ body{
 #loginForm input[type = "text"]:focus, #loginForm input[type = "password"]:focus{
     width: 15em;
     border-color: #2ecc71;
+}
+
+
+/* Nav CSS */
+
+nav{
+    background-color: black;
+}
+
+nav li{
+    list-style: none;
+    text-align: right;
+    font-size: 1.25em;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+nav a{
+    text-decoration: none;
+    padding: .75em;
+}
+
+
+a:link, a:active, a:visited{
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline;
+    background-color: rgb(43, 43, 43);
+    transition: .5s;
+}
+
+#active{
+    background-color: rgb(43, 43, 43);
 }
