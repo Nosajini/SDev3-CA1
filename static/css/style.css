@@ -18,18 +18,21 @@ body{
     width: 15em;
     padding: 3em;
     text-align: center;
+    display: flex;
 }
 
-#loginForm input[type = "text"], #loginForm input[type = "password"]{
+#loginForm input{
     margin: auto;
+    margin-bottom: 5%;
     border: .2em solid rgb(248, 217, 130);
     padding: 1em .5em;
     text-align: center;
     border-radius: 2em;
     background: none;
     color: white;
-    transition: .25s;
+    /*transition: .25s;*/
     outline: none;
+    width: 100%;
 }
 
 #loginForm h1{
@@ -37,8 +40,12 @@ body{
     color: white;
     text-transform: uppercase;
 }
+#loginForm p, ul{
+    color: white;
+    margin-bottom: 5%;
+}
 
-#loginForm button[type = "submit"]{
+#loginForm button{
     margin: auto;
     border: .2em solid #2ecc71;
     padding: 1em 3em;
@@ -50,14 +57,9 @@ body{
     cursor: pointer;
 }
 
-#loginForm button[type = "submit"]:hover{
+#loginForm button:hover{
     background: #2ecc71;
     transition: .75s;
-}
-
-#loginForm input[type = "text"]:focus, #loginForm input[type = "password"]:focus{
-    width: 15em;
-    border-color: #2ecc71;
 }
 
 
