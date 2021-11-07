@@ -6,44 +6,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 {% if user.is_authenticated %}
 
-<nav>
-    <li>
-        <text>{{ user.username }}</text>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'logout' %}">Logout</a>
-    </li>
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark">
+    <text class="navbar-brand">{{ user.username }}</text>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+    </ul>
 </nav>
+
 {% else %}
 
-<nav>
-    <li>
-        <text>You are not logged in.</text>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
-    </li>
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark">
+    <text class="navbar-brand">You are not logged in.</text>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+        </li>
+    </ul>
 </nav>
 
 {% endif %}
-
+<br>
 <body>
     {% block content %}
     {% endblock content %}
 </body>
 </html>
-
-
-<style>
-    text{
-    display: inline;
-    float: left;
-    font-size: 1.1em;
-    color: white;
-    margin-left: .75em;
-}
-</style>
