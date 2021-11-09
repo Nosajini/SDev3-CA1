@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,7 @@
         <div class="container-sm p-3 bg-dark col-4">
             <form method="post" id="loginForm">
                 {% csrf_token %}
-                <h1>
-                    Sign Up
-                </h1>
+                <h1>Sign Up</h1>
                 {{ form.as_p }}
                 <button type="submit" value="Log in">Create Account</button>
             </form>

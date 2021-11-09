@@ -7,6 +7,11 @@ body{
 
 }
 
+.round_borders{
+    border: .2em solid rgb(248, 217, 130);
+    border-radius: 2em;
+}
+
 /* Login Page CSS */
 
 #loginContainer{
