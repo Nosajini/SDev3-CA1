@@ -1,5 +1,7 @@
+from os import stat
 from django.urls import path
 from .views import loginPageView, signupPageView
+
 
 urlpatterns = [
     path('', loginPageView.as_view(), name="login"),
