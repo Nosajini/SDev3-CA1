@@ -104,7 +104,12 @@ a:hover{
 */
 
 
-.post-list{
+.post-list-img{
     width: 10em;
     height: 10em;
+    margin-left: 2.5em;
+}
+
+.post-list{
+    margin-left: 2.5em;
 }
