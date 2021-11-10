@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
@@ -13,10 +13,6 @@ class CustomUserCreationForm(UserCreationForm):
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
 
-
-class CustomUserChangeForm(PasswordChangeForm):
-    class Meta(PasswordChangeForm):
-        model = CustomUser
 
 
 
