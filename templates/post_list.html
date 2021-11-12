@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="post-list">
-    {% for post in object_list %}
-    {{ post.title }}
-
-    {% if post.image %}
-        <img class="post-list-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-    {% endif %}
-
-    <br><br>
-
-    {% endfor %}
+<div class="container-fluid">
+    <div class="rounded card-columns bg-dark m-3 p-3">
+        {% for post in object_list %}
+        <div class="card shadow bg-light p-2">
+            <div class="card shadow">
+                <div class="card-title text-center">
+                    <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                    <p class="">by {{ post.author }}</p>
+                </div>
+            </div>
+            <img class="shadow img-thumbnail card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
 

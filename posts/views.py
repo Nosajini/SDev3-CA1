@@ -1,13 +1,19 @@
 from django.views.generic import ListView, DetailView
+from django.views.generic.base import TemplateView
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
+
 
 # Create your views here.
 
 class PostListView(ListView):
     model = Post
     template_name = 'post_list.html'
+
+class PostListHome(ListView):
+    model = Post
+    template_name = 'home.html'
 
 
 class PostDetailView(DetailView):

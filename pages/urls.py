@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import homePageView
+from posts.views import PostListHome
 
 urlpatterns = [
-    path('', homePageView.as_view(), name='home'),
+    path('', PostListHome.as_view(), name='home'),
 ]
 
