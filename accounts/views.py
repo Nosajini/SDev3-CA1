@@ -14,6 +14,7 @@ class signupPageView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+
 class UserEditView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
