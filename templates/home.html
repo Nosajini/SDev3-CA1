@@ -9,15 +9,19 @@
         <p>These are the 3 latest posts;</p>
         <div class="container-fluid">
             <div class="rounded card-columns bg-dark m-3 p-3">
-                {% for post in object_list|slice:":3" %}
+                {% for post in object_list|slice:"::-1"|slice:":3" %}
                 <div class="card shadow bg-light p-2">
                     <div class="card shadow">
-                        <div class="card-title text-center text-dark">
+                        <div class="card-title text-center">
                             <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-                            <p class="">by {{ post.author }}</p>
+                            <p class="text-dark">by {{ post.author }}</p>
                         </div>
                     </div>
-                    <img class="shadow img-thumbnail card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+                    <div class="float-left">
+                        <img class="shadow img-thumbnail m-2 post-list-img" src="{{ post.image.url }}"
+                        alt="{{ post.title }}">
+                    </div>
+                    <p class="card-text text-dark">{{ post.body|truncatechars:100 }}</p>
                 </div>
                 {% endfor %}
             </div>

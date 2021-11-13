@@ -103,11 +103,14 @@ a:hover{
 }
 */
 
+.original-post-image{
+    width: 16em;
+    height: 16em;
+}
 
 .post-list-img{
     width: 10em;
     height: 10em;
-    margin-left: 2.5em;
 }
 
 .post-list{

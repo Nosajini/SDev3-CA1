@@ -13,7 +13,7 @@ class Post(models.Model):
         editable=False)
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='post', blank=False)
-    body = models.TextField()
+    body = models.TextField(max_length=1245)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         get_user_model(),
@@ -24,5 +24,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
-
-
+    
+    class Meta():
+        ordering = ('date',)

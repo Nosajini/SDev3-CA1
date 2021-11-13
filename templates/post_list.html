@@ -11,10 +11,13 @@
                     <p class="">by {{ post.author }}</p>
                 </div>
             </div>
-            <img class="shadow img-thumbnail card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+            <div class="float-left">
+                <img class="shadow img-thumbnail m-2 post-list-img" src="{{ post.image.url }}"
+                alt="{{ post.title }}">
+            </div>
+            <p class="card-text">{{ post.body|truncatechars:100 }}</p>
         </div>
         {% endfor %}
     </div>
 </div>
 {% endblock content %}
-
