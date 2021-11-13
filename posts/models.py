@@ -12,7 +12,7 @@ class Post(models.Model):
         default=uuid.uuid4,
         editable=False)
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='post')
+    image = models.ImageField(upload_to='post/')
     body = models.TextField(max_length=1245)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
