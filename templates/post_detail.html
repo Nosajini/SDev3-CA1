@@ -18,7 +18,7 @@
                <img class="shadow m-2 img-thumbnail original-post-image" src="{{ post.image.url }}"
                   alt="{{ post.title }}">
             </div>
-            <p class="card-text"><a class="nav-link" href="{% url 'show_profile' user.profile.pk %}">{{ post.author }}</a>: {{ post.body }}</p>
+            <p class="card-text"><a href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a>: {{ post.body }}</p>
          </div>
       </div>
    </div>
