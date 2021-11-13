@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="{% url 'show_profile' user.profile.pk %}">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'password_change' %}">Change Password</a>

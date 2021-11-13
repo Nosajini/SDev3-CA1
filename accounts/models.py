@@ -9,7 +9,6 @@ class CustomUser(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), null=True, on_delete=models.CASCADE,)
-    date_of_birth = models.DateField(blank=False, null=False)
 
     def __str__(self):
         return str(self.user)
