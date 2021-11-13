@@ -12,11 +12,12 @@
     {% block content %}
     <div class="row">
         <div class="col-4"></div>
-        <div class="container-sm p-3 bg-dark col-4">
+        <div class="container-sm p-3 bg-dark text-light col-4">
             <form method="post" id="loginForm">
                 {% csrf_token %}
                 <h1>Login</h1>
-                {{ form.as_p }}
+                {{ form|crispy }}
+                <a class="nav-link" href="{% url 'password_reset' %}">Password Reset</a>
                 <button type="submit" value="Log in">Login</button>
             </form>
         </div>
