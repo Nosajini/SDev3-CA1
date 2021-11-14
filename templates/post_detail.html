@@ -20,6 +20,10 @@
             </div>
             <p class="card-text"><a href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a>: {{ post.body }}</p>
          </div>
+         {% if user.pk == post.author.pk %}
+            <p class="mt-2 mb-0"><a href="{% url 'post_delete' pk=post.id %}">Delete Post</a></p>
+            <p class="mt-2 mb-0"><a href="{% url 'post_update' pk=post.id %}">Edit Post</a></p>
+         {% endif %}
       </div>
    </div>
    <div class="col-5 m-0"></div>

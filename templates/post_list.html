@@ -15,7 +15,7 @@
                 <img class="shadow img-thumbnail m-2 post-list-img" src="{{ post.image.url }}"
                 alt="{{ post.title }}">
             </div>
-            <p class="card-text">{{ post.body|truncatechars:100 }}</p>
+            <p class="card-text">{{ post.body|truncatechars:300 }}</p>
         </div>
         {% endfor %}
     </div>
