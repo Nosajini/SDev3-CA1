@@ -25,6 +25,3 @@ class UserEditView(UpdateView):
 class ProfilePageView(DetailView):
     model = Profile
     template_name = 'registration/user_profile.html'
-
-    def get_object(self):
-        return self.request.user

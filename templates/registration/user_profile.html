@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
-{% block title %}User Profile{% endblock title %}
 
 {% block content %}
-<h1>{{ profile.user.username }}</h1>
+<div class="cotainer-fluid">
+    <div class="card shadow bg-light px-2 py-4 mx-5">
+        <div class="m-auto font-weight-bold h4">
+            {{ profile.user.username }}<br>
+        </div>
+            <div class="col-sm-3">
+                <div class="row mx-3">
+                    <div class="col-sm-3">
+                        {% ifequal object.image None %}
+                            <img class="profile-pic card shadow" src="/media/profilepic/default_profile.jpg" />
+                        {% else %}
+                            <img class="profile-pic card shadow" src="{{ profile.profile_pic.url }}">
+                        {% endifequal %}
+                    </div>
+                </div><br><br>
+
+                <div class="row mx-4">
+                    <div>
+                        {% if profile.user.username == user.username %}
+                        <a class="edit_profile_button" href="#">Edit Profile</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>      
+    </div>
+</div>
 {% endblock content %}
