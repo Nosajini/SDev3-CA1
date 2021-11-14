@@ -18,7 +18,7 @@
                     <div class="card shadow">
                         <div class="card-title text-center">
                             <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-                            <p class="text-dark">by <a class="nav-link" href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a></p>
+                            <text class="text-dark">by <a class="" href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a> in {{ post.board }}</text>
                         </div>
                     </div>
                     <div class="float-left">

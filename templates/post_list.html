@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="text-center">- {{ board.name }} -</h1>
 <div class="container-fluid">
     <div class="rounded card-columns bg-dark m-3 p-3">
         {% for post in posts %}
@@ -8,7 +9,7 @@
             <div class="card shadow">
                 <div class="card-title text-center">
                     <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-                    <p>by <a href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a></p>
+                    <text class="text-dark">by <a class="" href="{% url 'show_profile' pk=post.author.pk %}">{{ post.author }}</a> in {{ post.board }}</text>
                 </div>
             </div>
             <div class="float-left">
