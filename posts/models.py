@@ -7,6 +7,23 @@ from django.urls import reverse
 
 # Create your models here.
 
+class Board(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    name = models.CharField(max_length=255, unique=True)
+    description = models.TextField
+    
+    class Meta:
+        ordering = ('name',)
+    
+    def get_absolute_url(self):
+        return reverse('posts:posts_by_board', args=[self.id])
+    
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     id = models.UUIDField(
         primary_key=True,
@@ -19,15 +36,16 @@ class Post(models.Model):
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
-
-    def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+    board = models.ForeignKey(Board, on_delete=models.CASCADE, default=uuid.uuid4)
     
     class Meta():
         ordering = ('date',)
+    
+    def get_absolute_url(self):
+       return reverse('posts:post_detail', args=[self.board.id, self.id])
+    
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     post = models.ForeignKey(

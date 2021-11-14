@@ -1,5 +1,7 @@
+from django.shortcuts import get_object_or_404, render
+from django.db import models
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, Board
 from .forms import ImageForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
@@ -7,6 +9,21 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
+
+class PostList(ListView):
+    model = Post
+
+    def get(self, request, board_id=None):
+        board = None
+        posts = None
+        if board_id != None:
+            board = get_object_or_404(Board, id = board_id)
+            posts = Post.objects.filter(board = board)
+        else:
+            posts = Post.objects.all()
+        
+        return render(request, "post_list.html", {'board':board, 'posts':posts})
+
 
 class PostListView(ListView):
     model = Post
@@ -18,7 +35,14 @@ class PostListHome(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'post_detail.html'
+
+    def get(self, request, board_id, post_id):
+        try:
+            post = Post.objects.get(board_id = board_id, id = post_id)
+        except Exception as e:
+            raise e
+        return render(request, "post_detail.html", {'post':post})
+        #template_name = 'post_detail.html'
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
