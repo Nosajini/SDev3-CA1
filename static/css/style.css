@@ -116,3 +116,22 @@ a:hover{
 .post-list{
     margin-left: 2.5em;
 }
+
+.password_reset_button{
+    margin: auto;
+    border: .2em solid #2ecc71;
+    padding: 1em 3em;
+    text-align: center;
+    border-radius: 2em;
+    background: none;
+    color: white;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.password_reset_button:hover{
+    background: #2ecc71;
+    color: white;
+    transition: .75s;
+    text-decoration: none;
+}
