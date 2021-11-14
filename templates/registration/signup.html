@@ -12,11 +12,11 @@
     {% block content %}
     <div class="row w-100">
         <div class="col-4"></div>
-        <div class="container-sm p-3 bg-dark col-4">
+        <div class="container-sm p-3 bg-dark text-light col-4">
             <form method="post" id="loginForm">
                 {% csrf_token %}
                 <h1>Sign Up</h1>
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <button type="submit" value="Log in">Create Account</button>
             </form>
         </div>
