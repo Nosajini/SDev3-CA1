@@ -10,6 +10,7 @@ class CustomUser(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), null=True, on_delete=models.CASCADE,)
+    profile_pic = models.ImageField(upload_to='profilepic/')
 
     @receiver(post_save, sender=CustomUser)
     def create_user_profile(sender, instance, created, **kwargs):

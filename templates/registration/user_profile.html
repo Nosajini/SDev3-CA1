@@ -20,7 +20,7 @@
                 <div class="row mx-4">
                     <div>
                         {% if profile.user.username == user.username %}
-                        <a class="edit_profile_button" href="#">Edit Profile</a>
+                        <a class="edit_profile_button" href="{% url 'edit_profile' %}">Edit Profile</a>
                         {% endif %}
                     </div>
                 </div>
