@@ -6,4 +6,4 @@ from .models import Post
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'body', 'image',]
+        fields = ['board', 'title', 'body', 'image',]

@@ -19,11 +19,17 @@
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'post_new' %}">Create Post</a>
+                <a class="nav-link" href="{% url 'posts:post_new' %}">Create Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
+                <a class="nav-link" href="{% url 'posts:post_list' %}">All Posts</a>
             </li>
+            
+            {% for cat in links %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{cat.get_absolute_url}}">{{cat.name}}</a>
+            </li>
+            {% endfor %}
             {% if user.profile.pk %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'show_profile' user.profile.pk %}">Profile</a>
@@ -47,7 +53,7 @@
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
+                <a class="nav-link" href="{% url 'posts:post_list' %}">Posts</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Log In</a>
