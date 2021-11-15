@@ -10,6 +10,8 @@ class CustomUser(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), null=True, on_delete=models.CASCADE,)
+    image = models.ImageField(blank = True, upload_to = 'profilepic/')
+    body = models.TextField(max_length=500, default='Hello!')
 
     @receiver(post_save, sender=CustomUser)
     def create_user_profile(sender, instance, created, **kwargs):
