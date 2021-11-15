@@ -1,3 +1,4 @@
+from django.db.models import fields
 from django.views.generic import TemplateView, CreateView, UpdateView, DetailView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
@@ -17,6 +18,7 @@ class signupPageView(CreateView):
 class UserEditView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
+    fields = ['profile_pic']
     success_url = reverse_lazy('home')
 
     def get_object(self):
