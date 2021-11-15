@@ -9,7 +9,7 @@
             <div class="col-sm-3">
                 <div class="row mx-3">
                     <div class="col-sm-3">
-                        {% ifequal object.image None %}
+                        {% ifequal profile.profile_pic None %}
                             <img class="profile-pic card shadow" src="/media/profilepic/default_profile.jpg" />
                         {% else %}
                             <img class="profile-pic card shadow" src="{{ profile.profile_pic.url }}">
@@ -20,7 +20,7 @@
                 <div class="row mx-4">
                     <div>
                         {% if profile.user.username == user.username %}
-                        <a class="edit_profile_button" href="#">Edit Profile</a>
+                        <a class="edit_profile_button" href="{% url 'edit_profile' profile.pk %}">Edit Profile</a>
                         {% endif %}
                     </div>
                 </div>
