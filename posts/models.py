@@ -51,7 +51,8 @@ class Comment(models.Model):
     post = models.ForeignKey(
         Post,
         on_delete = models.CASCADE,
-        related_name="comments"
+        related_name="comments",
+        null=False
     )
     image = models.ImageField(blank=True, upload_to='post/comment/')
     comment = models.CharField(max_length=255)
