@@ -18,7 +18,7 @@ class signupPageView(CreateView):
 class UserEditView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
-    fields = ['profile_pic']
+    fields = ['body', 'image']
     success_url = reverse_lazy('home')
 
     def get_object(self):
