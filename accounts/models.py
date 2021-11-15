@@ -13,6 +13,12 @@ class Profile(models.Model):
     image = models.ImageField(blank = True, upload_to = 'profilepic/')
     body = models.TextField(max_length=500, default='Hello!')
 
+    def profile_pic(self):
+        if self.image:
+            return self.image.url
+        else:
+            return '/media/profilepic/default_profile.jpg'
+
     @receiver(post_save, sender=CustomUser)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
