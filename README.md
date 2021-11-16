@@ -5,3 +5,11 @@ Admin login:
 admin
 adminpw123
 
+
+Grahame
+-----
+Login Page
+Sign Up
+Change Password
+Password Reset
+Profile Picture
