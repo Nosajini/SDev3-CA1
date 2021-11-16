@@ -8,6 +8,7 @@ adminpw123
 
 Grahame
 -----
+HTML,
 Login Page / View / Template,
 Sign Up Page / View / Template,
 Change Password Page / View / Template,
@@ -17,9 +18,11 @@ Profile Template / Picture
 Jason
 -----
 URLs,
+HTML,
+Bootstrap,
 User Model,
-Posts Model / Create View / Delete View / Edit View / Template,
-Comments Model / Create View / Reverse URL,
+Posts Model / Create View / Delete View / Edit View / User Image Upload / Template,
+Comments Model / Create View / User Image Upload / Reverse URL,
 Boards Model,
 Profile Model / Template
 
