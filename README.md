@@ -16,9 +16,10 @@ Profile Template / Picture
 
 Jason
 -----
+URLs,
 User Model,
 Posts Model / Create View / Delete View / Edit View / Template,
-Comments Model / Create View,
-Boards Model / URLs,
+Comments Model / Create View / Reverse URL,
+Boards Model,
 Profile Model / Template
 
