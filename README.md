@@ -8,8 +8,17 @@ adminpw123
 
 Grahame
 -----
-Login Page
-Sign Up
-Change Password
-Password Reset
-Profile Picture
+Login Page / View / Template
+Sign Up Page / View / Template
+Change Password Page / View / Template
+Password Reset Page / View / Template
+Profile Template / Picture
+
+Jason
+-----
+User Model
+Posts Model / Create View / Delete View / Edit View / Template
+Comments Model / Create View
+Boards Model / URLs
+Profile Model / Template
+
