@@ -41,9 +41,9 @@
                      <img class="shadow m-2 img-thumbnail original-post-image" src="{{ comment.image.url }}"
                         alt="{{ comment.author }}'s Image">
                   </div>
-                  <p class="card-text p-2"><a href="">{{ comment.author.username }}</a>: {{ comment.comment }}</p>
+                  <p class="card-text p-2"><a href="{% url 'show_profile' pk=comment.author.pk %}">{{ comment.author.username }}</a>: {{ comment.comment }}</p>
                {% else %}
-                  <p class="card-text p-3"><a href="">{{ comment.author.username }}</a>: {{ comment.comment }}</p>
+                  <p class="card-text p-3"><a href="{% url 'show_profile' pk=comment.author.pk %}">{{ comment.author.username }}</a>: {{ comment.comment }}</p>
                {% endif %}
             </div>
          </div>
